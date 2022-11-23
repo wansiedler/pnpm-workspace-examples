@@ -10,7 +10,7 @@ import { validateTodo, IAddTodoPayload, IGetTodosResponse, ITodoItem } from "val
 //
 // In a production build you'd want to plugin the location of your production REST API.
 //
-const BASE_URL = "http://localhost:5000";
+const BASE_URL = "http://localhost:6000";
 
 export function App() {
     const [todoList, setTodoList] = useState<ITodoItem[]>([]);

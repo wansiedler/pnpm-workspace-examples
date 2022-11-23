@@ -3,13 +3,13 @@ import * as bodyParser from "body-parser";
 import cors from "cors";
 
 //
-// The validation code library is shared between backend and frontend 
+// The validation code library is shared between backend and frontend
 // without being published to npm.
-// 
+//
 import { validateTodo, IAddTodoPayload, IGetTodosResponse, ITodoItem } from "validation";
 
 const app = express();
-const port = 5000;
+const port = 6000;
 
 //
 // Enables JSON in the request body.
@@ -68,7 +68,18 @@ app.get("/todos", (req, res) => {
 
     res.json(response);
 })
+app.get('/', function(req, res) {
+    res.send("Hello World!");
+});
+var http = require('http');
+var server = http.createServer(app);
+// app.listen(port, () => {
+//     console.log(`Todo list app listening on port ${port}`);
+//     console.log(`Todo list app listening on server.address().address ${app.address().address}`);
+// });
 
-app.listen(port, () => {
-    console.log(`Todo list app listening on port ${port}`);
+
+server.listen(6000, '127.0.0.1');
+server.on('listening', function() {
+    console.log('Express server started on port %s at %s', server.address().port, server.address().address);
 });

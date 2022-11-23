@@ -2,7 +2,7 @@
 # Test script for backend HTTP requests.
 #
 
-@base_url = http://localhost:5000
+@base_url = http://localhost:6000
 
 ###
 # Adds an item to the todo list.
@@ -43,6 +43,6 @@ POST {{base_url}}/todo
 Content-Type: application/json
 
 {
-    "todoItem": {}    
+    "todoItem": {}
 }
 
